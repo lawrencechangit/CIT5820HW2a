@@ -27,7 +27,6 @@ def hash_collision(k):
     while True:
         length_of_y = random.randint(1,100)
         y_string=random_string_generator(length_of_y)
-        print("y is", y_string)
         m_y=hashlib.sha256(y_string.encode('utf-8')).hexdigest()
         x_bit=bin(eval("0x"+m_x))
         y_bit=bin(eval("0x"+m_y))
