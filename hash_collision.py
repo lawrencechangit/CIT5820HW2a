@@ -40,7 +40,7 @@ def hash_collision(k):
     y = y_string.encode('utf-8')
     return (x, y)
 
-hash_collision(3)
+
 
 
 
