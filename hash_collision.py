@@ -22,21 +22,15 @@ def hash_collision(k):
 
     length_of_x=random.randint(1,10)
     x_string=random_string_generator(length_of_x)
-    print("x is", x_string)
     m_x = hashlib.sha256(x_string.encode('utf-8')).hexdigest()
-    print("hash of x:",m_x)
 
     while True:
         length_of_y = random.randint(1,100)
         y_string=random_string_generator(length_of_y)
         print("y is", y_string)
         m_y=hashlib.sha256(y_string.encode('utf-8')).hexdigest()
-        print("hash of y:", m_y)
         x_bit=bin(eval("0x"+m_x))
-        print(x_bit)
         y_bit=bin(eval("0x"+m_y))
-        print(y_bit)
-        print(x_bit[-k:])
         if x_bit[-k:]==y_bit[-k:]:
             break
         else:
@@ -44,8 +38,6 @@ def hash_collision(k):
 
     x = x_string.encode('utf-8')
     y = y_string.encode('utf-8')
-    print(x)
-    print(y)
     return (x, y)
 
 hash_collision(3)
